@@ -1,0 +1,60 @@
+.legal-content {
+  width: 90%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 0 6rem;
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.blog-hero + .legal-content {
+  padding-top: 1rem;
+}
+
+/* Aligne le bloc titre sur la même colonne que le contenu */
+.mentions-legales-page .blog-hero {
+  width: 90%;
+  max-width: 850px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.legal-content h2 {
+  font-size: 1.4rem;
+  color: var(--dark-text);
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.legal-content h2:first-of-type {
+  margin-top: 0;
+}
+
+.legal-content p,
+.legal-content ul {
+  margin-bottom: 1rem;
+}
+
+.legal-content ul {
+  padding-left: 1.5rem;
+}
+
+.legal-content li {
+  margin-bottom: 0.4rem;
+}
+
+.legal-content a {
+  color: var(--soft-turquoise);
+  text-decoration: underline;
+}
+
+.legal-content a:hover {
+  color: var(--primary);
+}
+
+.legal-update {
+  margin-top: 3rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--medium-text);
+}

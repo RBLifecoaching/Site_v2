@@ -70,6 +70,17 @@
   .hero-section {
     min-height: auto;
   }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .hero-image {
+    order: -1;
+    max-width: 90%;
+    margin: 0 auto;
+  }
 }
 
 /* ========================
