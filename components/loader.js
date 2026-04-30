@@ -1,6 +1,6 @@
 async function loadComponent(name, targetId) {
   try {
-    const res = await fetch(`components/${name}.html`);
+    const res = await fetch(`components/${name}.html`, { cache: "no-cache" });
     if (!res.ok) throw new Error(`Failed to load ${name}`);
     const target = document.getElementById(targetId);
     if (target) target.innerHTML = await res.text();

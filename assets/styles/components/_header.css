@@ -36,10 +36,15 @@
 }
 
 .nav-menu {
-  display: flex;
   list-style: none;
   gap: var(--spacing-lg);
   align-items: center;
+}
+
+@media (min-width: 1025px) {
+  .nav-menu {
+    display: flex;
+  }
 }
 
 .nav-link {
@@ -91,18 +96,50 @@
   transform: translateY(-2px);
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu — visible par défaut, caché sur grand écran */
 .hamburger {
-  display: none;
+  display: flex;
   cursor: pointer;
   flex-direction: column;
-  gap: 5px;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+  z-index: 1100;
+  position: relative;
+}
+
+@media (min-width: 1025px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.hamburger:hover {
+  background: var(--white-turquoise);
 }
 
 .bar {
-  width: 25px;
-  height: 3px;
-  background-color: var(--soft-turquoise);
+  display: block;
+  width: 26px;
+  height: 2.5px;
+  background-color: var(--dark-text);
   border-radius: var(--radius-full);
-  transition: var(--transition-fast);
+  transition: transform 0.35s ease, opacity 0.25s ease, width 0.25s ease;
+  transform-origin: center;
+}
+
+/* Animation croix quand actif */
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
 }

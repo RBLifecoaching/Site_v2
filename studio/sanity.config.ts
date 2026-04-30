@@ -24,7 +24,7 @@ export default defineConfig({
   name: 'default',
   title: 'JRMT',
 
-  projectId: 'dkyyi6l8',
+  projectId: 'eqczuptd',
   dataset: 'production',
 
   plugins: [
@@ -40,13 +40,13 @@ export default defineConfig({
             S.divider(),
 
             S.listItem()
-              .title('🏠 Page d\'accueil')
+              .title("🏠 Page d'accueil")
               .child(
                 S.list()
-                  .title('Sections de la page d\'accueil')
+                  .title("Sections de la page d'accueil")
                   .items([
                     S.listItem()
-                      .title('① Section d\'accueil (Hero)')
+                      .title("① Section d'accueil (Hero)")
                       .id('hero')
                       .child(S.document().schemaType('hero').documentId('hero')),
                     S.listItem()
@@ -78,7 +78,7 @@ export default defineConfig({
                       .id('services')
                       .child(S.document().schemaType('services').documentId('services')),
                     S.listItem()
-                      .title('⑨ Ce qu\'elles en disent')
+                      .title("⑨ Ce qu'elles en disent")
                       .id('testimonials')
                       .child(S.document().schemaType('testimonials').documentId('testimonials')),
                     S.listItem()
@@ -89,7 +89,7 @@ export default defineConfig({
                       .title('⑪ Newsletter du Lundi')
                       .id('newsletter')
                       .child(S.document().schemaType('newsletter').documentId('newsletter')),
-                  ])
+                  ]),
               ),
 
             S.divider(),
