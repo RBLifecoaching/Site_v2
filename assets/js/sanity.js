@@ -1,6 +1,6 @@
 // Client Sanity minimaliste (pas de dépendance, utilisable sur GitHub Pages)
 (function (global) {
-  const PROJECT_ID = 'dkyyi6l8';
+  const PROJECT_ID = 'eqczuptd';
   const DATASET = 'production';
   const API_VERSION = '2024-01-01';
 
