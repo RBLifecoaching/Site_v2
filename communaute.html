@@ -24,12 +24,13 @@
       <section class="hero-section" style="min-height: 70vh">
         <div class="hero-container">
           <div class="hero-content">
-            <h1 class="hero-title">La Communauté des #CaptainLumen</h1>
-            <p class="hero-subtitle">
+            <h1 id="com-hero-title" class="hero-title">La Communauté des #CaptainLumen</h1>
+            <p id="com-hero-subtitle" class="hero-subtitle">
               Pour ne plus être seule à relever les défis.
             </p>
             <div class="hero-buttons">
               <a
+                id="com-hero-cta"
                 href="https://calendly.com/rachida-coach/faisons-connaissance"
                 class="cta-button cta-primary"
                 >Je rejoins la communauté</a
@@ -38,6 +39,7 @@
           </div>
           <div class="hero-image">
             <img
+              id="com-hero-img"
               src="assets/images/groupe-femmes.png"
               alt="Illustration de la communauté CaptainLumen"
             />
@@ -47,12 +49,12 @@
 
       <section class="citation-section">
         <div class="container">
-          <blockquote>
+          <blockquote id="com-citation">
             Rejoins une communauté des exploratrices de leur vie intérieure, des
             personnes qui veulent rayonner ! Pour faire le point et avancer
             ensemble sur tes objectifs.
           </blockquote>
-          <p>- Rejoins-nous dans la communauté bienveillante des CaptainLumen !</p>
+          <p id="com-citation-auteur">- Rejoins-nous dans la communauté bienveillante des CaptainLumen !</p>
         </div>
       </section>
 
@@ -60,33 +62,36 @@
         <div class="about-content">
           <div class="about-image">
             <img
+              id="com-esprit-img"
               src="assets/images/coaching-groupe.png"
               alt="Femmes en discussion, représentant la communauté"
             />
             <div class="about-image-decoration"></div>
           </div>
           <div>
-            <h2>Esprit collectif et d'aventure</h2>
-            <p>
-              Les CaptainLumen ne sont pas de simples participantes. Ce sont des
-              femmes qui reprennent les commandes de leur vaisseau (leur vie) et
-              rayonnent de l'intérieur pour illuminer le monde autour d'elles.
-            </p>
-            <p>
-              Elles ont appris à garder leurs standards sans se mettre la
-              pression. Elles se réveillent le matin avec l'esprit clair,
-              pleines d'enthousiasme pour cette vie qu'elles ont choisie.
-            </p>
-            <ul class="checklist">
-              <li>Des pionnières de la clarté intérieure,</li>
-              <li>Des navigatrices du sens et de la résilience,</li>
-              <li>Des alliées dans l'apprentissage mutuel.</li>
-            </ul>
-            <p>
-              Un équipage uni par le désir de progresser, d'oser plus et de
-              partager expériences, ressources et victoires.
-            </p>
-            <a href="https://calendly.com/rachida-coach/faisons-connaissance" class="cta-button"
+            <h2 id="com-esprit-titre">Esprit collectif et d'aventure</h2>
+            <div id="com-esprit-contenu">
+              <p>
+                Les CaptainLumen ne sont pas de simples participantes. Ce sont des
+                femmes qui reprennent les commandes de leur vaisseau (leur vie) et
+                rayonnent de l'intérieur pour illuminer le monde autour d'elles.
+              </p>
+              <p>
+                Elles ont appris à garder leurs standards sans se mettre la
+                pression. Elles se réveillent le matin avec l'esprit clair,
+                pleines d'enthousiasme pour cette vie qu'elles ont choisie.
+              </p>
+              <ul class="checklist">
+                <li>Des pionnières de la clarté intérieure,</li>
+                <li>Des navigatrices du sens et de la résilience,</li>
+                <li>Des alliées dans l'apprentissage mutuel.</li>
+              </ul>
+              <p>
+                Un équipage uni par le désir de progresser, d'oser plus et de
+                partager expériences, ressources et victoires.
+              </p>
+            </div>
+            <a id="com-esprit-cta" href="https://calendly.com/rachida-coach/faisons-connaissance" class="cta-button"
               >Je veux en faire partie</a
             >
           </div>
@@ -152,7 +157,19 @@
 
     <div id="footer-placeholder"></div>
 
+    <script src="assets/js/sanity.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/communauteHero.js"></script>
+    <script src="assets/js/communauteCitation.js"></script>
+    <script src="assets/js/communauteEsprit.js"></script>
     <script src="components/loader.js"></script>
     <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        if (typeof initCommunauteHero === "function") await initCommunauteHero();
+        if (typeof initCommunauteCitation === "function") await initCommunauteCitation();
+        if (typeof initCommunauteEsprit === "function") await initCommunauteEsprit();
+      });
+    </script>
   </body>
 </html>

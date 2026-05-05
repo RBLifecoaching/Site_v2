@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const solution = defineType({
   name: 'solution',
-  title: 'Changer en douceur',
+  title: 'Solutions (changer en douceur)',
   type: 'document',
   description: 'Section avec le texte "Changer en douceur" et l\'illustration à droite.',
   fields: [
@@ -14,19 +14,25 @@ export const solution = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'phraseItalique',
-      title: 'Phrase en italique (accroche)',
-      description: 'La première phrase en italique sous le titre.',
-      type: 'text',
-      rows: 2,
-    }),
-    defineField({
-      name: 'paragraphes',
-      title: 'Paragraphes',
-      description: 'Les textes qui suivent l\'accroche. Ajoutez un paragraphe par entrée.',
+      name: 'contenu',
+      title: 'Contenu',
+      description:
+        "Écris ton texte ici. Tu peux mettre des mots en gras ou en italique via la barre d'outils.",
       type: 'array',
-      of: [{type: 'text'}],
-      validation: (Rule) => Rule.required().min(1),
+      of: [
+        {
+          type: 'block',
+          styles: [{title: 'Normal', value: 'normal'}],
+          lists: [],
+          marks: {
+            decorators: [
+              {title: 'Gras', value: 'strong'},
+              {title: 'Italique', value: 'em'},
+            ],
+          },
+        },
+      ],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'illustration',
@@ -36,7 +42,7 @@ export const solution = defineType({
       fields: [
         defineField({
           name: 'alt',
-          title: 'Description de l\'image (accessibilité)',
+          title: "Description de l'image (accessibilité)",
           type: 'string',
           validation: (Rule) => Rule.required(),
         }),

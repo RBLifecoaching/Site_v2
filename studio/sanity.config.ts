@@ -16,8 +16,14 @@ const singletonTypes = [
   'testimonials',
   'faq',
   'newsletter',
+  'navbar',
   'footer',
-  'communaute',
+  'communauteHero',
+  'communauteCitation',
+  'communauteEsprit',
+  'communauteGagne',
+  'communauteCta',
+  'mentionsLegales',
 ]
 
 export default defineConfig({
@@ -96,10 +102,44 @@ export default defineConfig({
 
             S.listItem()
               .title('👥 Page Communauté CaptainLumen')
-              .id('communaute')
-              .child(S.document().schemaType('communaute').documentId('communaute')),
+              .child(
+                S.list()
+                  .title('Page Communauté CaptainLumen')
+                  .items([
+                    S.listItem()
+                      .title("① Section d'accueil")
+                      .id('communauteHero')
+                      .child(S.document().schemaType('communauteHero').documentId('communauteHero')),
+                    S.listItem()
+                      .title('② Citation')
+                      .id('communauteCitation')
+                      .child(S.document().schemaType('communauteCitation').documentId('communauteCitation')),
+                    S.listItem()
+                      .title('③ Esprit collectif')
+                      .id('communauteEsprit')
+                      .child(S.document().schemaType('communauteEsprit').documentId('communauteEsprit')),
+                    S.listItem()
+                      .title('④ Ce que tu gagnes')
+                      .id('communauteGagne')
+                      .child(S.document().schemaType('communauteGagne').documentId('communauteGagne')),
+                    S.listItem()
+                      .title('⑤ Rejoindre la communauté')
+                      .id('communauteCta')
+                      .child(S.document().schemaType('communauteCta').documentId('communauteCta')),
+                  ]),
+              ),
 
             S.divider(),
+
+            S.listItem()
+              .title('📋 Mentions légales')
+              .id('mentionsLegales')
+              .child(S.document().schemaType('mentionsLegales').documentId('mentionsLegales')),
+
+            S.listItem()
+              .title('🧭 Barre de navigation')
+              .id('navbar')
+              .child(S.document().schemaType('navbar').documentId('navbar')),
 
             S.listItem()
               .title('⚙️ Pied de page')

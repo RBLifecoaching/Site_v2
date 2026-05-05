@@ -1,38 +1,36 @@
 import {defineField, defineType, defineArrayMember} from 'sanity'
 
-export const intro = defineType({
-  name: 'intro',
-  title: 'Tu ne sais plus où tu en es ?',
+export const communauteGagne = defineType({
+  name: 'communauteGagne',
+  title: '④ Ce que tu gagnes',
   type: 'document',
-  description: 'La section avec les 3 cartes "La Bonne Élève", "La Surcharge", "La Transition".',
   fields: [
     defineField({
       name: 'titre',
       title: 'Titre de la section',
-      description: 'Ex : "Tu ne sais plus où tu en es ?"',
+      description: 'Ex : "Ce que tu gagnes en rejoignant l\'aventure"',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'cartes',
-      title: 'Les 3 cartes',
-      description: 'Chaque carte a une image, un titre et un texte.',
+      title: 'Les cartes bénéfices',
       type: 'array',
       of: [
         defineArrayMember({
           type: 'object',
           name: 'carte',
-          title: 'Carte',
+          title: 'Bénéfice',
           fields: [
             defineField({
-              name: 'image',
-              title: 'Image de la carte',
+              name: 'icone',
+              title: 'Icône',
               type: 'image',
               options: {hotspot: true},
               fields: [
                 defineField({
                   name: 'alt',
-                  title: 'Description de l\'image (accessibilité)',
+                  title: 'Description de l\'icône',
                   type: 'string',
                   validation: (Rule) => Rule.required(),
                 }),
@@ -40,21 +38,20 @@ export const intro = defineType({
             }),
             defineField({
               name: 'titre',
-              title: 'Titre de la carte',
-              description: 'Ex : "La Bonne Élève"',
+              title: 'Titre du bénéfice',
               type: 'string',
               validation: (Rule) => Rule.required(),
             }),
             defineField({
               name: 'texte',
-              title: 'Texte de la carte',
+              title: 'Description',
               type: 'text',
               rows: 4,
               validation: (Rule) => Rule.required(),
             }),
           ],
           preview: {
-            select: {title: 'titre', media: 'image'},
+            select: {title: 'titre', media: 'icone'},
           },
         }),
       ],
@@ -62,6 +59,8 @@ export const intro = defineType({
     }),
   ],
   preview: {
-    select: {title: 'titre'},
+    prepare() {
+      return {title: '④ Ce que tu gagnes'}
+    },
   },
 })

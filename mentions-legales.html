@@ -34,15 +34,14 @@
       <article class="legal-content">
         <h2>Éditeur du site</h2>
         <p>
-          <strong>Rachida Blanchard</strong> — Coach professionnelle, accompagnement
-          des femmes sensibles et anxieuses (« Je réussis ma transition »).
+          <strong>Rachida Blanchard</strong> — <span id="ml-titre">Coach professionnelle, accompagnement des femmes sensibles et anxieuses (« Je réussis ma transition »).</span>
         </p>
         <ul>
-          <li>Adresse : Ramonville-Saint-Agne, France — [À compléter : adresse complète]</li>
-          <li>Email : [À compléter]</li>
-          <li>Téléphone : [À compléter]</li>
-          <li>SIRET : [À compléter]</li>
-          <li>Forme juridique : [À compléter — micro-entreprise / EI / EURL…]</li>
+          <li id="ml-adresse">Adresse : Ramonville-Saint-Agne, France — [À compléter : adresse complète]</li>
+          <li id="ml-email">Email : [À compléter]</li>
+          <li id="ml-telephone">Téléphone : [À compléter]</li>
+          <li id="ml-siret">SIRET : [À compléter]</li>
+          <li id="ml-forme">Forme juridique : [À compléter — micro-entreprise / EI / EURL…]</li>
         </ul>
 
         <h2>Directrice de la publication</h2>
@@ -88,7 +87,7 @@
         </p>
         <p>
           Pour exercer vos droits, contactez-nous à l'adresse :
-          <strong>[À compléter — email de contact]</strong>.
+          <strong id="ml-email-rgpd">[À compléter — email de contact]</strong>.
         </p>
 
         <h2>Cookies</h2>
@@ -116,19 +115,27 @@
 
         <h2>Crédits</h2>
         <p>
-          Photographies : [À compléter — auteur(e) des photos]<br />
-          Conception et développement : [À compléter]
+          Photographies : <span id="ml-credits-photos">[À compléter — auteur(e) des photos]</span><br />
+          Conception et développement : <span id="ml-credits-dev">[À compléter]</span>
         </p>
 
         <p class="legal-update">
-          Dernière mise à jour : 30 avril 2026.
+          Dernière mise à jour : <span id="ml-date">30 avril 2026</span>.
         </p>
       </article>
     </main>
 
     <div id="footer-placeholder"></div>
 
+    <script src="assets/js/sanity.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/mentionsLegales.js"></script>
     <script src="components/loader.js"></script>
     <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        if (typeof initMentionsLegales === "function") await initMentionsLegales();
+      });
+    </script>
   </body>
 </html>

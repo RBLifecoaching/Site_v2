@@ -113,30 +113,6 @@ function initializeApp() {
     observer.observe(card);
   });
 
-  const newsletterForm = document.querySelector(".newsletter-form");
-  if (newsletterForm) {
-    newsletterForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const email = newsletterForm.querySelector('input[type="email"]').value;
-
-      if (email && email.includes("@")) {
-        const button = newsletterForm.querySelector(".cta-button");
-        const originalText = button.textContent;
-        button.textContent = "✓ Inscrit !";
-        button.style.background = "linear-gradient(135deg, #4CAF50, #45a049)";
-        setTimeout(() => {
-          button.textContent = originalText;
-          button.style.background = "";
-          newsletterForm.reset();
-        }, 3000);
-      } else {
-        const input = newsletterForm.querySelector('input[type="email"]');
-        input.classList.add("shake");
-        setTimeout(() => input.classList.remove("shake"), 500);
-      }
-    });
-  }
-
   document.querySelectorAll(".faq-item details").forEach((detail) => {
     detail.addEventListener("toggle", () => {
       if (detail.open) {

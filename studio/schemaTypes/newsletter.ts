@@ -24,15 +24,16 @@ export const newsletter = defineType({
     defineField({
       name: 'boutonTexte',
       title: 'Texte du bouton',
-      description: 'Ex : "Je m\'inscris"',
+      description: 'Ex : "Je m\'abonne à la newsletter"',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'placeholderEmail',
-      title: 'Texte indicatif du champ email',
-      description: 'Ex : "Votre adresse email"',
+      name: 'boutonLien',
+      title: 'Lien du bouton',
+      description: 'L\'URL vers laquelle le bouton redirige. Ex : "https://jereussismatransition.substack.com"',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

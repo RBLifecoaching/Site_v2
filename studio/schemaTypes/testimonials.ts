@@ -2,9 +2,10 @@ import {defineField, defineType, defineArrayMember} from 'sanity'
 
 export const testimonials = defineType({
   name: 'testimonials',
-  title: 'Ce qu\'elles en disent (Témoignages)',
+  title: 'Avis',
   type: 'document',
-  description: 'Section des témoignages de clientes. Ajoutez, modifiez ou supprimez des témoignages.',
+  description:
+    'Section des témoignages de clientes. Ajoutez, modifiez ou supprimez des témoignages.',
   fields: [
     defineField({
       name: 'titre',

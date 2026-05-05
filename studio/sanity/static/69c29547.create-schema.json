@@ -1,0 +1,2437 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 120
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string",
+        "title": "Titre"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "slug",
+        "type": "slug",
+        "title": "Slug (URL)"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "publishedAt",
+        "type": "datetime",
+        "title": "Date de publication"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "alt",
+            "type": "string",
+            "title": "Texte alternatif (accessibilité)"
+          }
+        ],
+        "name": "mainImage",
+        "type": "image",
+        "title": "Image de une"
+      },
+      {
+        "rows": 3,
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 280
+              }
+            ]
+          }
+        ],
+        "name": "excerpt",
+        "type": "text",
+        "title": "Extrait (affiché sur la liste des articles)"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "of": [
+          {
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Puces"
+              },
+              {
+                "value": "number",
+                "title": "Numérotée"
+              }
+            ],
+            "marks": {
+              "annotations": [
+                {
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "level": "error",
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^mailto$/",
+                                    "/^tel$/"
+                                  ],
+                                  "allowRelative": false,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "name": "href",
+                      "type": "url",
+                      "title": "URL"
+                    },
+                    {
+                      "initialValue": true,
+                      "name": "blank",
+                      "type": "boolean",
+                      "title": "Ouvrir dans un nouvel onglet"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object",
+                  "title": "Lien"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Gras"
+                },
+                {
+                  "value": "em",
+                  "title": "Italique"
+                },
+                {
+                  "value": "underline",
+                  "title": "Souligné"
+                }
+              ]
+            },
+            "of": [],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Paragraphe"
+              },
+              {
+                "value": "h2",
+                "title": "Titre H2"
+              },
+              {
+                "value": "h3",
+                "title": "Titre H3"
+              },
+              {
+                "value": "blockquote",
+                "title": "Citation"
+              }
+            ],
+            "type": "block"
+          },
+          {
+            "options": {
+              "hotspot": true
+            },
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "alt",
+                "type": "string",
+                "title": "Texte alternatif"
+              },
+              {
+                "name": "caption",
+                "type": "string",
+                "title": "Légende"
+              }
+            ],
+            "type": "image"
+          }
+        ],
+        "name": "body",
+        "type": "array",
+        "title": "Contenu"
+      },
+      {
+        "description": "Sources et liens externes citées dans l'article",
+        "of": [
+          {
+            "fields": [
+              {
+                "rows": 2,
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "description",
+                "type": "text",
+                "title": "Texte descriptif"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "linkText",
+                "type": "string",
+                "title": "Texte du lien"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "uri",
+                        "constraint": {
+                          "options": {
+                            "scheme": [
+                              "/^http$/",
+                              "/^https$/"
+                            ],
+                            "allowRelative": false,
+                            "relativeOnly": false,
+                            "allowCredentials": false
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": "linkUrl",
+                "type": "url",
+                "title": "URL du lien"
+              }
+            ],
+            "type": "object",
+            "name": "articleReference",
+            "title": "Référence"
+          }
+        ],
+        "name": "references",
+        "type": "array",
+        "title": "Références"
+      }
+    ],
+    "name": "post",
+    "type": "document",
+    "title": "Article de blog"
+  },
+  {
+    "description": "La grande section en haut de la page d'accueil avec la photo de Rachida.",
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Accompagnement des femmes sensibles et anxieuses\"",
+        "name": "tag",
+        "type": "string",
+        "title": "Étiquette (petite ligne au-dessus du titre)"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Le titre complet, ex : \"Entre deux mondes, j'ai appris à naviguer.\"",
+        "name": "titre",
+        "type": "string"
+      },
+      {
+        "description": "Les mots du titre à afficher en couleur, un par ligne. Ex : \"mondes\", \"naviguer\".",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "motsEnCouleur",
+        "type": "array",
+        "title": "Mots en vert"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "description": "Les petites phrases poétiques sous le titre, une par ligne.",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "anaphore",
+        "type": "array",
+        "title": "Les trois phrases \"Entre...\""
+      },
+      {
+        "rows": 4,
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Le texte qui présente Rachida et sa mission.",
+        "name": "sousTitre",
+        "type": "text",
+        "title": "Paragraphe de présentation"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Découvrir Lumen'Essence\"",
+        "name": "boutonTexte",
+        "type": "string",
+        "title": "Texte du bouton"
+      },
+      {
+        "description": "Ancre vers une section : \"#services\", \"#faq\"… ou URL complète : \"https://…\" (s'ouvre dans un nouvel onglet)",
+        "name": "boutonLien",
+        "type": "string",
+        "title": "Lien du bouton"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "alt",
+            "type": "string",
+            "title": "Texte alternatif (décrivez la photo pour l'accessibilité)"
+          }
+        ],
+        "name": "photo",
+        "type": "image",
+        "title": "Photo de Rachida"
+      }
+    ],
+    "name": "hero",
+    "type": "document",
+    "title": "Section d'accueil (Hero)"
+  },
+  {
+    "description": "Section avec la liste des situations qui résonnent et la conclusion.",
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Tu es au bon endroit si...\"",
+        "name": "titre",
+        "type": "string",
+        "title": "Titre de la section"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "description": "Chaque élément est une situation courte. Ex : \"ton mental ne s'arrête jamais\"",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "situations",
+        "type": "array",
+        "title": "La liste des situations"
+      },
+      {
+        "rows": 3,
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Écris une phrase par ligne — chaque retour à la ligne crée un nouveau paragraphe.",
+        "name": "conclusionPhrases",
+        "type": "text",
+        "title": "Phrases de conclusion"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "La phrase finale en évidence. Ex : \"C'est le signe que ton système intérieur est saturé.\"",
+        "name": "conclusionMiseEnAvant",
+        "type": "string",
+        "title": "Phrase mise en avant"
+      },
+      {
+        "description": "Les mots ou groupes de mots à colorier en vert dans la phrase ci-dessus, un par ligne.",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "conclusionMots",
+        "type": "array",
+        "title": "Mots en vert (phrase mise en avant)"
+      }
+    ],
+    "name": "observation",
+    "type": "document",
+    "title": "Observation (Tu es au bon endroit si...)"
+  },
+  {
+    "description": "Section avec deux colonnes : ce que tu ne cherches pas (Non) et ce que tu cherches (Oui).",
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Tu ne cherches pas\"",
+        "name": "titrePasRecherche",
+        "type": "string",
+        "title": "Titre colonne \"Non\""
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"à devenir quelqu'un d'autre\", \"à positiver à tout prix\"...",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "listePasRecherche",
+        "type": "array",
+        "title": "Liste \"Tu ne cherches pas\""
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Tu cherches surtout\"",
+        "name": "titreRecherche",
+        "type": "string",
+        "title": "Titre colonne \"Oui\""
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"du calme mental\", \"de la clarté\"...",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "listeRecherche",
+        "type": "array",
+        "title": "Liste \"Tu cherches surtout\""
+      }
+    ],
+    "name": "cherche",
+    "type": "document",
+    "title": "Tu ne cherches pas / Tu cherches surtout"
+  },
+  {
+    "description": "Section avec le texte \"Changer en douceur\" et l'illustration à droite.",
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Changer en douceur\"",
+        "name": "titre",
+        "type": "string",
+        "title": "Titre de la section"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Écris ton texte ici. Tu peux mettre des mots en gras ou en italique via la barre d'outils.",
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "level": "error",
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Gras"
+                },
+                {
+                  "value": "em",
+                  "title": "Italique"
+                }
+              ]
+            },
+            "of": [],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              }
+            ],
+            "type": "block"
+          }
+        ],
+        "name": "contenu",
+        "type": "array"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "alt",
+            "type": "string",
+            "title": "Description de l'image (accessibilité)"
+          }
+        ],
+        "name": "illustration",
+        "type": "image",
+        "title": "Illustration (image à droite)"
+      }
+    ],
+    "name": "solution",
+    "type": "document",
+    "title": "Solutions (changer en douceur)"
+  },
+  {
+    "description": "Section de présentation de Rachida avec sa photo et son histoire.",
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Pourquoi je fais ce que je fais\"",
+        "name": "titre",
+        "type": "string",
+        "title": "Titre de la section"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "alt",
+            "type": "string",
+            "title": "Description de la photo (accessibilité)"
+          }
+        ],
+        "name": "photo",
+        "type": "image",
+        "title": "Photo de Rachida"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Écris tes paragraphes ici. Pour une citation stylisée, sélectionne le texte et choisis le style \"Citation\" dans la barre d'outils.",
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "level": "error",
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Gras"
+                },
+                {
+                  "value": "em",
+                  "title": "Italique"
+                }
+              ]
+            },
+            "of": [],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "blockquote",
+                "title": "Citation"
+              }
+            ],
+            "type": "block"
+          }
+        ],
+        "name": "contenu",
+        "type": "array"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Je réserve mon appel clarté offert\"",
+        "name": "boutonTexte",
+        "type": "string",
+        "title": "Texte du bouton"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "boutonLien",
+        "type": "url",
+        "title": "Lien du bouton (URL Calendly)"
+      }
+    ],
+    "name": "about",
+    "type": "document",
+    "title": "A propos"
+  },
+  {
+    "description": "Section avec les 3 piliers de l'accompagnement et le tableau des résultats attendus.",
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Mon approche\"",
+        "name": "titre",
+        "type": "string",
+        "title": "Titre de la section"
+      },
+      {
+        "description": "Ex : \"Mon accompagnement repose sur trois piliers complémentaires.\"",
+        "name": "sousTitre",
+        "type": "string",
+        "title": "Sous-titre"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "description": "Chaque pilier a un numéro, un titre et un texte explicatif.",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "description": "Ex : \"01\"",
+                "name": "numero",
+                "type": "string",
+                "title": "Numéro"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "description": "Ex : \"Les neurosciences comportementales\"",
+                "name": "titre",
+                "type": "string",
+                "title": "Titre du pilier"
+              },
+              {
+                "rows": 3,
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "texte",
+                "type": "text",
+                "title": "Description du pilier"
+              }
+            ],
+            "type": "object",
+            "name": "pilier"
+          }
+        ],
+        "name": "piliers",
+        "type": "array",
+        "title": "Les 3 piliers"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Les résultats que tu peux attendre\"",
+        "name": "titreResultats",
+        "type": "string",
+        "title": "Titre du bloc résultats"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "description": "Chaque ligne montre ce qui change : état de départ → état d'arrivée.",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "description": "Ex : \"Confusion et fatigue mentale\"",
+                "name": "avant",
+                "type": "string",
+                "title": "Avant (situation difficile)"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "description": "Ex : \"Clarté et sérénité\"",
+                "name": "apres",
+                "type": "string",
+                "title": "Après (résultat positif)"
+              }
+            ],
+            "type": "object",
+            "name": "resultat",
+            "title": "Transformation"
+          }
+        ],
+        "name": "resultats",
+        "type": "array",
+        "title": "Tableau des transformations (avant → après)"
+      }
+    ],
+    "name": "approche",
+    "type": "document",
+    "title": "Mon approche"
+  },
+  {
+    "description": "Section avec les 3 offres : Communauté, Lumen'Essence, Coaching individuel.",
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Mes Accompagnements\"",
+        "name": "titre",
+        "type": "string",
+        "title": "Titre de la section"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "description": "Chaque offre est une carte avec icône, titre, texte et bouton.",
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "fields": [
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "alt",
+                    "type": "string",
+                    "title": "Description de l'icône"
+                  }
+                ],
+                "name": "icone",
+                "type": "image",
+                "title": "Icône / Illustration"
+              },
+              {
+                "description": "Ex : \"Programme phare\". Laissez vide si pas de badge.",
+                "name": "badge",
+                "type": "string",
+                "title": "Badge (optionnel)"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "description": "Ex : \"Lumen'Essence\"",
+                "name": "titre",
+                "type": "string",
+                "title": "Titre de l'offre"
+              },
+              {
+                "rows": 3,
+                "description": "Un ou deux phrases de description. Laissez vide si vous utilisez une liste.",
+                "name": "texte",
+                "type": "text",
+                "title": "Description courte (pour les cartes simples)"
+              },
+              {
+                "description": "Ex : \"Apaiser ton mental\", \"Accueillir tes émotions...\"",
+                "of": [
+                  {
+                    "type": "string"
+                  }
+                ],
+                "name": "listeBenefices",
+                "type": "array",
+                "title": "Liste des bénéfices (pour le programme phare)"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "boutonTexte",
+                "type": "string",
+                "title": "Texte du bouton"
+              },
+              {
+                "description": "URL ou ancre (ex : \"#\" ou \"communaute.html\")",
+                "name": "boutonLien",
+                "type": "string",
+                "title": "Lien du bouton"
+              }
+            ],
+            "type": "object",
+            "name": "offre"
+          }
+        ],
+        "name": "offres",
+        "type": "array",
+        "title": "Les offres"
+      }
+    ],
+    "name": "services",
+    "type": "document"
+  },
+  {
+    "description": "Section des témoignages de clientes. Ajoutez, modifiez ou supprimez des témoignages.",
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Ce qu'elles en disent\"",
+        "name": "titre",
+        "type": "string",
+        "title": "Titre de la section"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "description": "Chaque témoignage a un texte et le prénom de la personne.",
+        "of": [
+          {
+            "fields": [
+              {
+                "rows": 5,
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "description": "Collez ici la citation telle quelle, avec les guillemets si souhaité.",
+                "name": "texte",
+                "type": "text",
+                "title": "Texte du témoignage"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "description": "Ex : \"Monique\"",
+                "name": "prenom",
+                "type": "string",
+                "title": "Prénom de la cliente"
+              },
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "fields": [
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "title": "Description de la photo"
+                  }
+                ],
+                "name": "photo",
+                "type": "image",
+                "title": "Photo de la cliente (optionnel)"
+              }
+            ],
+            "type": "object",
+            "name": "temoignage",
+            "title": "Témoignage"
+          }
+        ],
+        "name": "temoignages",
+        "type": "array",
+        "title": "Les témoignages"
+      }
+    ],
+    "name": "testimonials",
+    "type": "document",
+    "title": "Avis"
+  },
+  {
+    "description": "Les questions-réponses affichées sur la page d'accueil. Ajoutez ou modifiez les questions.",
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Questions fréquentes\"",
+        "name": "titre",
+        "type": "string",
+        "title": "Titre de la section"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "description": "Chaque entrée est une question avec sa réponse. Glissez-déposez pour réordonner.",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "question",
+                "type": "string"
+              },
+              {
+                "rows": 5,
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "reponse",
+                "type": "text",
+                "title": "Réponse"
+              }
+            ],
+            "type": "object",
+            "name": "question"
+          }
+        ],
+        "name": "questions",
+        "type": "array",
+        "title": "Questions et réponses"
+      }
+    ],
+    "name": "faq",
+    "type": "document",
+    "title": "Questions fréquentes (FAQ)"
+  },
+  {
+    "description": "Le bloc d'inscription à la newsletter visible sur la page d'accueil.",
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"La newsletter du Lundi\"",
+        "name": "titre",
+        "type": "string"
+      },
+      {
+        "rows": 3,
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Chaque lundi, recevez une dose d'inspiration...\"",
+        "name": "texte",
+        "type": "text",
+        "title": "Texte de description"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Je m'abonne à la newsletter\"",
+        "name": "boutonTexte",
+        "type": "string",
+        "title": "Texte du bouton"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "L'URL vers laquelle le bouton redirige. Ex : \"https://jereussismatransition.substack.com\"",
+        "name": "boutonLien",
+        "type": "string",
+        "title": "Lien du bouton"
+      }
+    ],
+    "name": "newsletter",
+    "type": "document",
+    "title": "Newsletter du Lundi"
+  },
+  {
+    "description": "Logo, liens du menu et bouton de prise de rendez-vous.",
+    "fields": [
+      {
+        "options": {
+          "hotspot": false
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Logo affiché en haut à gauche de la navigation.",
+        "fields": [
+          {
+            "description": "Description pour les lecteurs d'écran (ex : \"Logo Rachida Blanchard\")",
+            "name": "alt",
+            "type": "string",
+            "title": "Texte alternatif"
+          }
+        ],
+        "name": "logo",
+        "type": "image",
+        "title": "Image du logo"
+      },
+      {
+        "description": "Page vers laquelle pointe le logo (ex : \"index.html\")",
+        "name": "lienLogo",
+        "type": "string",
+        "title": "Lien du logo"
+      },
+      {
+        "description": "Les entrées du menu de navigation (titre + URL).",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "titre",
+                "type": "string",
+                "title": "Titre du lien"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "lien",
+                "type": "string",
+                "title": "URL"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "liens",
+        "type": "array",
+        "title": "Liens du menu"
+      },
+      {
+        "description": "Ex : \"Prendre RDV\"",
+        "name": "boutonTexte",
+        "type": "string",
+        "title": "Texte du bouton CTA"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "boutonLien",
+        "type": "url",
+        "title": "Lien du bouton CTA"
+      }
+    ],
+    "name": "navbar",
+    "type": "document",
+    "title": "Barre de navigation"
+  },
+  {
+    "description": "Les informations en bas de toutes les pages : copyright, liens et réseaux sociaux.",
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"© 2026 Je réussis ma transition - Rachida Coach | Ramonville Saint-Agne\"",
+        "name": "copyright",
+        "type": "string",
+        "title": "Texte de copyright"
+      },
+      {
+        "description": "URL de la page des mentions légales.",
+        "name": "lienMentionsLegales",
+        "type": "string",
+        "title": "Lien \"Mentions Légales\""
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "lienRendezVous",
+        "type": "url",
+        "title": "Lien \"Prendre RDV\" (Calendly)"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "lienLinkedIn",
+        "type": "url",
+        "title": "Lien LinkedIn"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "lienInstagram",
+        "type": "url"
+      }
+    ],
+    "name": "footer",
+    "type": "document",
+    "title": "Pied de page (Footer)"
+  },
+  {
+    "description": "Informations légales du site à compléter et mettre à jour.",
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Rachida Blanchard — Coach professionnelle, accompagnement des femmes sensibles et anxieuses (« Je réussis ma transition »).\"",
+        "name": "titre",
+        "type": "string",
+        "title": "Description de l'éditeur"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"12 rue des Lilas, 31520 Ramonville-Saint-Agne, France\"",
+        "name": "adresse",
+        "type": "string",
+        "title": "Adresse complète"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Adresse email publique affichée dans les mentions (et utilisée pour les droits RGPD).",
+        "name": "email",
+        "type": "string",
+        "title": "Email de contact"
+      },
+      {
+        "description": "Ex : \"+33 6 12 34 56 78\"",
+        "name": "telephone",
+        "type": "string",
+        "title": "Téléphone"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"123 456 789 00012\"",
+        "name": "siret",
+        "type": "string",
+        "title": "Numéro SIRET"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Micro-entreprise\", \"EI\", \"EURL\"…",
+        "name": "formeJuridique",
+        "type": "string",
+        "title": "Forme juridique"
+      },
+      {
+        "description": "Ex : \"Rachida Blanchard\" ou \"Studio XYZ\"",
+        "name": "creditsPhotos",
+        "type": "string",
+        "title": "Crédits photos"
+      },
+      {
+        "description": "Ex : \"Envolée numérique\"",
+        "name": "creditsDev",
+        "type": "string",
+        "title": "Crédits conception & développement"
+      },
+      {
+        "options": {
+          "dateFormat": "DD MMMM YYYY"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "dateMiseAJour",
+        "type": "date",
+        "title": "Date de dernière mise à jour"
+      }
+    ],
+    "name": "mentionsLegales",
+    "type": "document",
+    "title": "Mentions légales"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"La Communauté des #CaptainLumen\"",
+        "name": "titre",
+        "type": "string",
+        "title": "Titre principal"
+      },
+      {
+        "name": "sousTitre",
+        "type": "string",
+        "title": "Sous-titre"
+      },
+      {
+        "name": "boutonTexte",
+        "type": "string",
+        "title": "Texte du bouton"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "boutonLien",
+        "type": "url",
+        "title": "Lien du bouton"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "alt",
+            "type": "string",
+            "title": "Description de l'image"
+          }
+        ],
+        "name": "image",
+        "type": "image",
+        "title": "Illustration"
+      }
+    ],
+    "name": "communauteHero",
+    "type": "document",
+    "title": "① Section d'accueil"
+  },
+  {
+    "fields": [
+      {
+        "rows": 4,
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "citation",
+        "type": "text",
+        "title": "Citation mise en avant"
+      },
+      {
+        "name": "auteur",
+        "type": "string",
+        "title": "Auteur / accroche sous la citation"
+      }
+    ],
+    "name": "communauteCitation",
+    "type": "document",
+    "title": "② Citation"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Esprit collectif et d'aventure\"",
+        "name": "titre",
+        "type": "string",
+        "title": "Titre de la section"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "alt",
+            "type": "string",
+            "title": "Description de l'image"
+          }
+        ],
+        "name": "image",
+        "type": "image",
+        "title": "Image de la section"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Écris ton texte ici. Tu peux ajouter des listes à puces via le bouton \"•\" de la barre d'outils.",
+        "of": [
+          {
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Liste à puces"
+              }
+            ],
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "level": "error",
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Gras"
+                },
+                {
+                  "value": "em",
+                  "title": "Italique"
+                }
+              ]
+            },
+            "of": [],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              }
+            ],
+            "type": "block"
+          }
+        ],
+        "name": "contenu",
+        "type": "array"
+      },
+      {
+        "name": "boutonTexte",
+        "type": "string",
+        "title": "Texte du bouton"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "boutonLien",
+        "type": "url",
+        "title": "Lien du bouton"
+      }
+    ],
+    "name": "communauteEsprit",
+    "type": "document",
+    "title": "③ Esprit collectif"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Ce que tu gagnes en rejoignant l'aventure\"",
+        "name": "titre",
+        "type": "string",
+        "title": "Titre de la section"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "fields": [
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "alt",
+                    "type": "string",
+                    "title": "Description de l'icône"
+                  }
+                ],
+                "name": "icone",
+                "type": "image",
+                "title": "Icône"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "titre",
+                "type": "string",
+                "title": "Titre du bénéfice"
+              },
+              {
+                "rows": 4,
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "texte",
+                "type": "text",
+                "title": "Description"
+              }
+            ],
+            "type": "object",
+            "name": "carte",
+            "title": "Bénéfice"
+          }
+        ],
+        "name": "cartes",
+        "type": "array",
+        "title": "Les cartes bénéfices"
+      }
+    ],
+    "name": "communauteGagne",
+    "type": "document",
+    "title": "④ Ce que tu gagnes"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Ex : \"Prête à nous rejoindre ?\"",
+        "name": "titre",
+        "type": "string",
+        "title": "Titre du bloc"
+      },
+      {
+        "rows": 2,
+        "name": "texte",
+        "type": "text"
+      },
+      {
+        "name": "boutonTexte",
+        "type": "string",
+        "title": "Texte du bouton"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "boutonLien",
+        "type": "url",
+        "title": "Lien du bouton"
+      }
+    ],
+    "name": "communauteCta",
+    "type": "document",
+    "title": "⑤ Rejoindre la communauté"
+  }
+]

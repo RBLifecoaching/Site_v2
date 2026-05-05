@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const observation = defineType({
   name: 'observation',
-  title: 'Tu es au bon endroit si...',
+  title: 'Observation (Tu es au bon endroit si...)',
   type: 'document',
   description: 'Section avec la liste des situations qui résonnent et la conclusion.',
   fields: [
@@ -24,17 +24,27 @@ export const observation = defineType({
     defineField({
       name: 'conclusionPhrases',
       title: 'Phrases de conclusion',
-      description: 'Les petites phrases en bas. Ex : "Ce n\'est pas un manque de volonté."',
-      type: 'array',
-      of: [{type: 'string'}],
-      validation: (Rule) => Rule.required().min(1),
+      description:
+        'Écris une phrase par ligne — chaque retour à la ligne crée un nouveau paragraphe.',
+      type: 'text',
+      rows: 3,
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'conclusionMiseEnAvant',
-      title: 'Phrase mise en avant (en gras)',
-      description: 'Ex : "C\'est le signe que ton système intérieur est saturé."',
+      title: 'Phrase mise en avant',
+      description:
+        'La phrase finale en évidence. Ex : "C\'est le signe que ton système intérieur est saturé."',
       type: 'string',
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'conclusionMots',
+      title: 'Mots en vert (phrase mise en avant)',
+      description:
+        'Les mots ou groupes de mots à colorier en vert dans la phrase ci-dessus, un par ligne.',
+      type: 'array',
+      of: [{type: 'string'}],
     }),
   ],
   preview: {

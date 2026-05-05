@@ -1,6 +1,5 @@
 import {post} from './post'
 import {hero} from './hero'
-import {intro} from './intro'
 import {solution} from './solution'
 import {about} from './about'
 import {approche} from './approche'
@@ -11,14 +10,19 @@ import {observation} from './observation'
 import {cherche} from './cherche'
 import {newsletter} from './newsletter'
 import {footer} from './footer'
-import {communaute} from './communaute'
+import {navbar} from './navbar'
+import {mentionsLegales} from './mentionsLegales'
+import {communauteHero} from './communauteHero'
+import {communauteCitation} from './communauteCitation'
+import {communauteEsprit} from './communauteEsprit'
+import {communauteGagne} from './communauteGagne'
+import {communauteCta} from './communauteCta'
 
 export const schemaTypes = [
   // Blog
   post,
   // Sections de la page d'accueil
   hero,
-  intro,
   observation,
   cherche,
   solution,
@@ -29,7 +33,13 @@ export const schemaTypes = [
   faq,
   newsletter,
   // Éléments communs
+  navbar,
   footer,
+  mentionsLegales,
   // Pages secondaires
-  communaute,
+  communauteHero,
+  communauteCitation,
+  communauteEsprit,
+  communauteGagne,
+  communauteCta,
 ]

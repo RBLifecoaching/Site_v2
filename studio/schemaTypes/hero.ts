@@ -14,30 +14,18 @@ export const hero = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'titrePartie1',
-      title: 'Titre — partie 1 (avant le mot en couleur)',
-      description: 'Ex : "Entre deux"',
+      name: 'titre',
+      title: 'Titre',
+      description: 'Le titre complet, ex : "Entre deux mondes, j\'ai appris à naviguer."',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'titreMot1',
-      title: 'Titre — 1er mot en couleur',
-      description: 'Ex : "mondes"',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'titrePartie2',
-      title: 'Titre — partie 2',
-      description: 'Ex : ", j\'ai appris à"',
-      type: 'string',
-    }),
-    defineField({
-      name: 'titreMot2',
-      title: 'Titre — 2ème mot en couleur',
-      description: 'Ex : "naviguer"',
-      type: 'string',
+      name: 'motsEnCouleur',
+      title: 'Mots en vert',
+      description: 'Les mots du titre à afficher en couleur, un par ligne. Ex : "mondes", "naviguer".',
+      type: 'array',
+      of: [{type: 'string'}],
     }),
     defineField({
       name: 'anaphore',
@@ -65,7 +53,7 @@ export const hero = defineType({
     defineField({
       name: 'boutonLien',
       title: 'Lien du bouton',
-      description: 'Ex : "#services" pour pointer vers la section services',
+      description: 'Ancre vers une section : "#services", "#faq"… ou URL complète : "https://…" (s\'ouvre dans un nouvel onglet)',
       type: 'string',
     }),
     defineField({

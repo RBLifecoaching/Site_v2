@@ -29,6 +29,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadComponent(c.name, c.target);
   }
 
+  if (typeof initNavbar === "function") await initNavbar();
+  if (typeof initHero === "function") await initHero();
+  if (typeof initObservation === "function") await initObservation();
+  if (typeof initCherche === "function") await initCherche();
+  if (typeof initAbout === "function") await initAbout();
+  if (typeof initSolution === "function") await initSolution();
+  if (typeof initApproche === "function") await initApproche();
+  if (typeof initServices === "function") await initServices();
+  if (typeof initTestimonials === "function") await initTestimonials();
+  if (typeof initFaq === "function") await initFaq();
+  if (typeof initNewsletter === "function") await initNewsletter();
+  if (typeof initFooter === "function") await initFooter();
   if (typeof initializeApp === "function") initializeApp();
   if (typeof typeHeroTitle === "function") typeHeroTitle();
 });

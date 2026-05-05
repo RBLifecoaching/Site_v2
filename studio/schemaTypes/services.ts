@@ -2,9 +2,9 @@ import {defineField, defineType, defineArrayMember} from 'sanity'
 
 export const services = defineType({
   name: 'services',
-  title: 'Mes Accompagnements',
+  title: 'Services',
   type: 'document',
-  description: 'Section avec les 3 offres : Communauté, Lumen\'Essence, Coaching individuel.',
+  description: "Section avec les 3 offres : Communauté, Lumen'Essence, Coaching individuel.",
   fields: [
     defineField({
       name: 'titre',
@@ -32,7 +32,7 @@ export const services = defineType({
               fields: [
                 defineField({
                   name: 'alt',
-                  title: 'Description de l\'icône',
+                  title: "Description de l'icône",
                   type: 'string',
                   validation: (Rule) => Rule.required(),
                 }),
@@ -46,7 +46,7 @@ export const services = defineType({
             }),
             defineField({
               name: 'titre',
-              title: 'Titre de l\'offre',
+              title: "Titre de l'offre",
               description: 'Ex : "Lumen\'Essence"',
               type: 'string',
               validation: (Rule) => Rule.required(),
@@ -54,7 +54,8 @@ export const services = defineType({
             defineField({
               name: 'texte',
               title: 'Description courte (pour les cartes simples)',
-              description: 'Un ou deux phrases de description. Laissez vide si vous utilisez une liste.',
+              description:
+                'Un ou deux phrases de description. Laissez vide si vous utilisez une liste.',
               type: 'text',
               rows: 3,
             }),
