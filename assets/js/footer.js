@@ -1,6 +1,7 @@
 async function initFooter() {
   const query = `*[_type == "footer"][0]{
-    copyright, lienMentionsLegales, lienRendezVous, lienLinkedIn, lienInstagram
+    copyright, lienMentionsLegales, lienCgv, lienPolitiqueConfidentialite,
+    lienRendezVous, lienLinkedIn, lienInstagram
   }`;
 
   try {
@@ -14,6 +15,13 @@ async function initFooter() {
 
     const mentionsEl = el('footer-mentions');
     if (mentionsEl && data.lienMentionsLegales) mentionsEl.href = data.lienMentionsLegales;
+
+    const cgvEl = el('footer-cgv');
+    if (cgvEl && data.lienCgv) cgvEl.href = data.lienCgv;
+
+    const confidentialiteEl = el('footer-confidentialite');
+    if (confidentialiteEl && data.lienPolitiqueConfidentialite)
+      confidentialiteEl.href = data.lienPolitiqueConfidentialite;
 
     const rdvEl = el('footer-rdv');
     if (rdvEl && data.lienRendezVous) rdvEl.href = data.lienRendezVous;

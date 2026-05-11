@@ -12,6 +12,8 @@ import {newsletter} from './newsletter'
 import {footer} from './footer'
 import {navbar} from './navbar'
 import {mentionsLegales} from './mentionsLegales'
+import {cgv} from './cgv'
+import {politiqueConfidentialite} from './politiqueConfidentialite'
 import {communauteHero} from './communauteHero'
 import {communauteCitation} from './communauteCitation'
 import {communauteEsprit} from './communauteEsprit'
@@ -36,6 +38,8 @@ export const schemaTypes = [
   navbar,
   footer,
   mentionsLegales,
+  cgv,
+  politiqueConfidentialite,
   // Pages secondaires
   communauteHero,
   communauteCitation,

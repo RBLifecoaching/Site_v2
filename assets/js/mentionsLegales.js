@@ -1,7 +1,7 @@
 async function initMentionsLegales() {
   const query = `*[_type == "mentionsLegales"][0]{
     titre, adresse, email, telephone, siret, formeJuridique,
-    creditsPhotos, creditsDev, dateMiseAJour
+    creditsPhotos, dateMiseAJour
   }`;
 
   try {
@@ -33,9 +33,6 @@ async function initMentionsLegales() {
 
     const photosEl = el('ml-credits-photos');
     if (photosEl) photosEl.textContent = data.creditsPhotos || '';
-
-    const devEl = el('ml-credits-dev');
-    if (devEl) devEl.textContent = data.creditsDev || '';
 
     if (data.dateMiseAJour) {
       const dateEl = el('ml-date');

@@ -20,6 +20,18 @@ export const footer = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'lienCgv',
+      title: 'Lien "CGV"',
+      description: 'URL de la page des conditions générales de vente.',
+      type: 'string',
+    }),
+    defineField({
+      name: 'lienPolitiqueConfidentialite',
+      title: 'Lien "Politique de confidentialité"',
+      description: 'URL de la page de politique de confidentialité.',
+      type: 'string',
+    }),
+    defineField({
       name: 'lienRendezVous',
       title: 'Lien "Prendre RDV" (Calendly)',
       type: 'url',

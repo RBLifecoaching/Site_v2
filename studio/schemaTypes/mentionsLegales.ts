@@ -54,12 +54,6 @@ export const mentionsLegales = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'creditsDev',
-      title: 'Crédits conception & développement',
-      description: 'Ex : "Envolée numérique"',
-      type: 'string',
-    }),
-    defineField({
       name: 'dateMiseAJour',
       title: 'Date de dernière mise à jour',
       type: 'date',

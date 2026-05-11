@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <title>Politique de confidentialité - Rachida Blanchard</title>
+    <meta
+      name="description"
+      content="Politique de confidentialité du site de Rachida Blanchard, coach pour femmes sensibles et anxieuses."
+    />
+    <link rel="stylesheet" href="assets/styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main role="main">
+      <section class="blog-hero">
+        <h1 id="confidentialite-titre">Politique de confidentialité</h1>
+      </section>
+
+      <article class="legal-content" id="confidentialite-contenu"></article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/sanity.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/politiqueConfidentialite.js"></script>
+    <script src="components/loader.js"></script>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        if (typeof initPolitiqueConfidentialite === "function") await initPolitiqueConfidentialite();
+      });
+    </script>
+  </body>
+</html>

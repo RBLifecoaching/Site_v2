@@ -24,6 +24,8 @@ const singletonTypes = [
   'communauteGagne',
   'communauteCta',
   'mentionsLegales',
+  'cgv',
+  'politiqueConfidentialite',
 ]
 
 export default defineConfig({
@@ -135,6 +137,20 @@ export default defineConfig({
               .title('📋 Mentions légales')
               .id('mentionsLegales')
               .child(S.document().schemaType('mentionsLegales').documentId('mentionsLegales')),
+
+            S.listItem()
+              .title('📄 Conditions générales de vente')
+              .id('cgv')
+              .child(S.document().schemaType('cgv').documentId('cgv')),
+
+            S.listItem()
+              .title('🔒 Politique de confidentialité')
+              .id('politiqueConfidentialite')
+              .child(
+                S.document()
+                  .schemaType('politiqueConfidentialite')
+                  .documentId('politiqueConfidentialite'),
+              ),
 
             S.listItem()
               .title('🧭 Barre de navigation')
