@@ -1,5 +1,6 @@
 import {post} from './post'
 import {hero} from './hero'
+import intro from './intro'
 import {solution} from './solution'
 import {about} from './about'
 import {approche} from './approche'
@@ -25,6 +26,7 @@ export const schemaTypes = [
   post,
   // Sections de la page d'accueil
   hero,
+  intro,
   observation,
   cherche,
   solution,
