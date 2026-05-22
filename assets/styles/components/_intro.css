@@ -92,7 +92,7 @@
 }
 .intro-card p {
   font-size: 1rem;
-  line-height: 2.2; !important;
+  line-height: 2.2 !important;
   color: var(--medium-text);
   text-align: left;
   padding: 0 var(--spacing-lg) var(--spacing-xl);
