@@ -29,7 +29,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: var(--spacing-lg);
-  max-width: 1280px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -92,12 +92,12 @@
 }
 .intro-card p {
   font-size: 1rem;
-  line-height: 1.9;
+  line-height: 2.2;
   color: var(--medium-text);
   text-align: left;
-  padding: 0 var(--spacing-lg) var(--spacing-lg);
+  padding: 0 var(--spacing-lg) var(--spacing-xl);
 
-  max-width: 55ch;
+  max-width: 45ch;
   margin: 0 auto;
 
 }
