@@ -11,7 +11,8 @@ export default {
     {
       name: 'text',
       title: 'Texte',
-      type: 'text'
+      type: 'array',
+      of: [{ type: 'block' }]
     }
   ]
 }
