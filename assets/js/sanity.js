@@ -133,6 +133,10 @@
       return '';
     }
   }
-
-  global.Sanity = {fetchQuery, imageUrl, renderPortableText, escapeHtml, formatDate};
-})(window);
+window.Sanity = {
+  fetchQuery,
+  imageUrl,
+  renderPortableText,
+  escapeHtml,
+  formatDate
+};
