@@ -7,7 +7,9 @@
   transform: translateX(-50%);
 }
 .intro-text-section {
-  padding: var(--spacing-xl) var(--spacing-md);
+  
+  padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md);
+}
   margin-top: -3rem;
   background: var(--white);
   position: relative;
