@@ -5,15 +5,12 @@ console.log("INTRO JS CHARGÉ");
     return;
   }
   try {
-    const query = `*[_type == "pageDAccueil"][0]{
-      "intro": intro{
-        title,
-        text
-      }
+    const query = `*[_type == "intro"][0]{
+      title,
+      text
     }`;
-    const data = await window.Sanity.fetchQuery(query);
-    console.log("Données intro:", data);
-    const intro = data?.intro;
+    const intro = await window.Sanity.fetchQuery(query);
+    console.log("Données intro:", intro);
     const container = document.getElementById("intro-placeholder");
     if (!intro || !container) return;
     container.innerHTML = `
