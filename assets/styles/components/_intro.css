@@ -8,6 +8,7 @@
 }
 .intro-text-section {
   padding: var(--spacing-xl) var(--spacing-md);
+  margin-top: -3rem;
   background: var(--white);
   position: relative;
 }
