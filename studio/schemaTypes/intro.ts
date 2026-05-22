@@ -9,10 +9,21 @@ export default {
       type: 'string'
     },
     {
-      name: 'text',
-      title: 'Texte',
+      name: 'paragraphes',
+      title: 'Paragraphes',
       type: 'array',
-      of: [{ type: 'block' }]
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'texte',
+              title: 'Texte',
+              type: 'text'
+            }
+          ]
+        }
+      ]
     }
   ]
 }
