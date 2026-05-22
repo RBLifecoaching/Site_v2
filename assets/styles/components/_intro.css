@@ -99,7 +99,7 @@
 
   max-width: 40ch;
   margin: 0 auto;
-
+ padding-left: 2rem; 
 }
 
 .intro-card em {
