@@ -1,5 +1,6 @@
 .observation-section {
-  padding: var(--spacing-xl) var(--spacing-md);
+ 
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-xl);
   background: linear-gradient(160deg, var(--white) 0%, var(--white-turquoise) 100%);
 }
 
