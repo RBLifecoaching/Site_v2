@@ -9,7 +9,7 @@ console.log("INTRO JS CHARGÉ");
   try {
     const query = `*[_type == "intro"][0]`;
     const intro = await window.Sanity.fetchQuery(query);
-
+    console.log("Données intro:", intro);
     const container = document.getElementById("intro-placeholder");
     if (!intro || !container) return;
 
