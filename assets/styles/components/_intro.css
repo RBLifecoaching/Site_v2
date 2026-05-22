@@ -90,13 +90,22 @@
   text-align: center;
   font-weight: var(--font-weight-bold);
 }
-
 .intro-card p {
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.9;
   color: var(--medium-text);
   text-align: left;
   padding: 0 var(--spacing-lg) var(--spacing-lg);
+
+  max-width: 55ch;
+  margin: 0 auto;
+    background: red !important;
+}
+p {
+  background: yellow !important;
+}
+#intro-placeholder {
+  background: red !important;
 }
 
 .intro-card em {

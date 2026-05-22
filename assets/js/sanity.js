@@ -70,6 +70,4 @@
     formatDate
   };
 
-  console.log("Sanity OK chargé");
-
 })(window);
