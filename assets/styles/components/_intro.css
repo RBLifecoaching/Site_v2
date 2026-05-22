@@ -91,11 +91,16 @@
   font-weight: var(--font-weight-bold);
 }
 
-.intro p {
-  line-height: 2.2;
-  padding-left: 2rem;
-  margin-bottom: 1.2rem;
-  max-width: 45ch;
+.intro-text {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.intro-text p {
+  line-height: 2;
+  margin-bottom: 2rem;
+  color: var(--medium-text);
 }
 
 .intro-card em {
