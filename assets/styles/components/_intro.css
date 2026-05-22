@@ -99,13 +99,7 @@
 
   max-width: 55ch;
   margin: 0 auto;
-    background: red !important;
-}
-p {
-  background: yellow !important;
-}
-#intro-placeholder {
-  background: red !important;
+
 }
 
 .intro-card em {
