@@ -7,16 +7,23 @@ console.log("INTRO JS CHARGÉ");
   try {
     const query = `*[_type == "intro"][0]{
       title,
-      text
+      paragraphes
     }`;
     const intro = await window.Sanity.fetchQuery(query);
     console.log("Données intro:", intro);
     const container = document.getElementById("intro-placeholder");
     if (!intro || !container) return;
+
+    const paragraphesHTML = Array.isArray(intro.paragraphes)
+      ? intro.paragraphes
+          .map(p => `<p>${p.texte || ""}</p>`)
+          .join("")
+      : "";
+
     container.innerHTML = `
       <section class="intro-text-section">
         <h2>${intro.title || ""}</h2>
-        <p>${intro.text || ""}</p>
+        <div class="intro-text">${paragraphesHTML}</div>
       </section>
     `;
   } catch (e) {
