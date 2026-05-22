@@ -23,6 +23,3 @@
 
 @import url("layout/_grid.css");
 @import url("layout/_responsive.css");
-body {
-  background: hotpink !important;
-}
