@@ -37,13 +37,15 @@
   transform: translateY(-2px);
 }
 .nav-menu {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  list-style: none;
+  gap: var(--spacing-lg);
+  align-items: center;
 }
-
+.nav-menu.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
 
 /* Mobile menu — caché par défaut, affiché quand actif */
 @media (max-width: 1024px) {
