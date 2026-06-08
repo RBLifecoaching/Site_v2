@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   if (typeof initNavbar === "function") await initNavbar();
-  if (typeof initNavbar === "function") await initNavbar();
   if (typeof initBurger === "function") initBurger(); // ← ajoute cette ligne
   if (typeof initHero === "function") await initHero();
   if (typeof initObservation === "function") await initObservation();
