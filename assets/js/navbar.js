@@ -38,27 +38,27 @@ async function initNavbar() {
     console.error('Navbar Sanity fetch failed:', err);
   }
 }
-function initBurger() {
-  const burger = document.getElementById('burger');
-  const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('#nav-menu a');
-
-  if (!burger || !navMenu) {
-    console.warn('Burger ou nav-menu introuvable');
-    return;
+/* Mobile : menu caché par défaut */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white; /* adapte à ta couleur */
+    padding: 1rem 0;
   }
 
-  // Ouvre/ferme le menu au clic sur le burger
-  burger.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
-    burger.classList.toggle('active');
-  });
+  .nav-menu.active {
+    display: flex;
+  }
 
-  // Ferme le menu quand on clique sur un lien
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('open');
-      burger.classList.remove('active');
-    });
-  });
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
 }
