@@ -38,3 +38,27 @@ async function initNavbar() {
     console.error('Navbar Sanity fetch failed:', err);
   }
 }
+function initBurger() {
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('#nav-menu a');
+
+  if (!burger || !navMenu) {
+    console.warn('Burger ou nav-menu introuvable');
+    return;
+  }
+
+  // Ouvre/ferme le menu au clic sur le burger
+  burger.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    burger.classList.toggle('active');
+  });
+
+  // Ferme le menu quand on clique sur un lien
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      burger.classList.remove('active');
+    });
+  });
+}
