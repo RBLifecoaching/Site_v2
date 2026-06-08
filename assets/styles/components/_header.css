@@ -9,7 +9,9 @@
   z-index: 1000;
   transition: var(--transition-normal);
 }
-
+.nav-menu {
+  display: flex;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
