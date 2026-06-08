@@ -64,18 +64,20 @@
     backdrop-filter: blur(10px);
     z-index: 1050;
     opacity: 0;
-    pointer-events: auto !important;
+    visibility: hidden; /* Ajouté pour être sûr que Firefox le cache bien */
+    pointer-events: none; /* Changé ici : invisible = non cliquable */
     transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   }
-.nav-menu.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
-  transform: translateY(0);
+
+  .nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all !important; /* Changé ici : visible = cliquable */
+    transform: translateY(0);
+  }
 }
- 
-}
+
 
 @media (min-width: 1025px) {
   .nav-menu {
