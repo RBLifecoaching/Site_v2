@@ -37,17 +37,28 @@
 
     return url + `?${query.join('&')}`;
   }
+ function renderPortableText(blocks) {
+  if (!Array.isArray(blocks)) return '';
 
-  function renderPortableText(blocks) {
-    if (!Array.isArray(blocks)) return '';
-
-    return blocks.map(b => {
-      if (b._type === 'block') {
-        return `<p>${(b.children || []).map(c => c.text).join('')}</p>`;
+  return blocks.map(b => {
+    if (b._type === 'block') {
+      // On regarde si c'est un titre ou un paragraphe normal
+      const style = b.style || 'normal';
+      
+      if (style === 'h2') {
+        return `<h2>${(b.children || []).map(c => c.text).join('')}</h2>`;
       }
-      return '';
-    }).join('');
-  }
+      if (style === 'h3') {
+        return `<h3>${(b.children || []).map(c => c.text).join('')}</h3>`;
+      }
+      
+      // Par défaut, on garde le paragraphe
+      return `<p>${(b.children || []).map(c => c.text).join('')}</p>`;
+    }
+    return '';
+  }).join('');
+}
+ 
 
   function escapeHtml(str) {
     return String(str)
