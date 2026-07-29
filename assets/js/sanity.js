@@ -31,20 +31,27 @@
     return url + `?${query.join('&')}`;
   }
 
-  function renderChildren(children) {
+  function renderChildren(children, markDefs) {
     return (children || []).map(c => {
       let text = escapeHtml(c.text || '');
       if (Array.isArray(c.marks)) {
         c.marks.forEach(mark => {
           if (mark === 'strong') text = `<strong>${text}</strong>`;
           else if (mark === 'em') text = `<em>${text}</em>`;
+          else {
+            // Cherche si c'est un lien
+            const def = (markDefs || []).find(d => d._key === mark);
+            if (def && def._type === 'link') {
+              text = `<a href="${escapeHtml(def.href)}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+            }
+          }
         });
       }
       return text;
     }).join('');
   }
 
-  function renderPortableText(blocks) {
+   function renderPortableText(blocks) {
     if (!Array.isArray(blocks)) return '';
 
     let html = '';
@@ -56,13 +63,18 @@
         inList = false;
       }
 
+      if (b._type === 'image') {
+        html += `<figure class="post-image"><img src="${imageUrl(b, { width: 900 })}" alt="${escapeHtml(b.alt || '')}"></figure>`;
+        return;
+      }
+
       if (b._type === 'block') {
         if (b.listItem === 'bullet') {
           if (!inList) { html += '<ul>'; inList = true; }
-          html += `<li>${renderChildren(b.children)}</li>`;
+          html += `<li>${renderChildren(b.children, b.markDefs)}</li>`;
         } else {
           const style = b.style || 'normal';
-          const content = renderChildren(b.children);
+          const content = renderChildren(b.children, b.markDefs);
           if (style === 'h2') html += `<h2>${content}</h2>`;
           else if (style === 'h3') html += `<h3>${content}</h3>`;
           else html += `<p>${content}</p>`;
