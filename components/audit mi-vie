@@ -1,0 +1,7 @@
+<section id="Bilan" class="Bilan-section">
+  <div class="container">
+    <h2 id="Bilan"></h2>
+    <p id="Bilan-texte"></p>
+    <a id="newsletter-cta" href="#" class="cta-button" target="_blank" rel="noopener noreferrer"></a>
+  </div>
+</section>
