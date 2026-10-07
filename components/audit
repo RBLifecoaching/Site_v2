@@ -1,0 +1,7 @@
+<section id="newsletter" class="newsletter-section">
+  <div class="container">
+    <h2 id="newsletter-titre"></h2>
+    <p id="newsletter-texte"></p>
+    <a id="newsletter-cta" href="#" class="cta-button" target="_blank" rel="noopener noreferrer"></a>
+  </div>
+</section>
